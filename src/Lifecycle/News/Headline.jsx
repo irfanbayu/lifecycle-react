@@ -6,6 +6,8 @@ const Headline = ({ headline, findKey }) => {
   return (
     <>
       <Row className="gy-2 gy-md-3">
+        {/* Uncaught TypeError: Cannot read properties of undefined (reading
+        'filter') */}
         {headline
           .filter((card) => {
             if (card.title.toLowerCase().includes(findKey.toLowerCase())) {
