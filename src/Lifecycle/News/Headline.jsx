@@ -6,19 +6,22 @@ const Headline = ({ headline, findKey }) => {
   return (
     <>
       <Row className="gy-2 gy-md-3">
-        {/* Uncaught TypeError: Cannot read properties of undefined (reading
-        'filter') */}
         {headline
-          .filter((card) => {
-            if (card.title.toLowerCase().includes(findKey.toLowerCase())) {
-              return card;
+          .filter((cards) => {
+            if (findKey === "") {
+              return cards;
+            } else if (
+              cards.title.toLowerCase().includes(findKey.toLowerCase())
+            ) {
+              return cards;
             }
+            return false;
           })
-          .map((card, index) => {
+          .map((cards, index) => {
             return (
               <>
-                <Col sm="5" md="3" key={index}>
-                  <Cards card={card} />
+                <Col sm="6" md="4" key={index}>
+                  <Cards cards={cards} />
                 </Col>
               </>
             );

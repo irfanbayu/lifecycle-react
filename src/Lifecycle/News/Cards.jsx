@@ -1,23 +1,25 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 
-const Cards = ({ news }) => {
+const Cards = ({ cards }) => {
   return (
     <div>
       <Card>
         <Card.Header>
-          <Card.Img src={news.urlToImage} alt={news.title} />
+          <Card.Img src={cards.urlToImage} alt={cards.title} />
           <Card.Title>
-            {`${news.title}`.length >= 100 ? `${news.title}` : `${news.title}`}
+            {`${cards.title}`.length >= 100
+              ? `${cards.title}`
+              : `${cards.title}`}
           </Card.Title>
         </Card.Header>
         <Card.Body>
           <Card.Text>
-            {`${news.description}` !== "null"
-              ? `${news.description}`
+            {`${cards.description}` !== "null"
+              ? `${cards.description}`
               : "No content"}
           </Card.Text>
-          <a href={news.url}>
+          <a href={cards.url}>
             <Button>Read More..</Button>
           </a>
         </Card.Body>

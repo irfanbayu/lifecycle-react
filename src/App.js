@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, FormControl } from "react-bootstrap";
+import {
+  Container,
+  FormControl,
+  Section,
+  Nav,
+  Form,
+  Span,
+} from "react-bootstrap";
 
 import Headline from "./Lifecycle/News/Headline";
 
@@ -22,15 +29,22 @@ const App = () => {
   console.log(find);
 
   return (
-    <div className="py-5">
-      <Container>
-        <FormControl
-          className="mb-4"
-          placeholder="Search"
-          onChange={(e) => setFindKey(e.target.value)}
-        />
-        <Headline headline={headline} findKey={find} />
-      </Container>
+    <div className="pt-5">
+      <Nav className="navbar navbar-light bg-light">
+        <Form className="container">
+          <div className="input-group">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Cari Berita"
+              aria-label="Search"
+              onChange={(e) => setFindKey(e.target.value)}
+            />
+            <Headline headline={headline} find={find} />
+          </div>
+        </Form>
+        <div className="row mt-5" id="card-container"></div>
+      </Nav>
     </div>
   );
 };
