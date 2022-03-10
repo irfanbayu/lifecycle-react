@@ -2,17 +2,15 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import Cards from "./Cards";
 
-const Headline = ({ headline, findKey }) => {
+const Headline = ({ headline, find }) => {
   return (
     <>
       <Row className="gy-2 gy-md-3">
         {headline
           .filter((cards) => {
-            if (findKey === "") {
+            if (find === "") {
               return cards;
-            } else if (
-              cards.title.toLowerCase().includes(findKey.toLowerCase())
-            ) {
+            } else if (cards.title.toLowerCase().includes(find.toLowerCase())) {
               return cards;
             }
             return false;

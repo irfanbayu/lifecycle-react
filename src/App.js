@@ -20,8 +20,8 @@ const App = () => {
       const get = await axios(
         "https://newsapi.org/v2/top-headlines?country=id&apiKey=2ce3391dc00c4c4395e8ba75f6384d25"
       );
-      console.log(get.data.headline);
-      setHeadline(get.data.headline);
+      console.log(get.data.articles);
+      setHeadline(get.data.articles);
     };
     getData();
   }, []);

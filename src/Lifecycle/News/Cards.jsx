@@ -4,6 +4,7 @@ import { Card, Button } from "react-bootstrap";
 const Cards = ({ cards }) => {
   return (
     <div>
+      <br />
       <Card>
         <Card.Header>
           <Card.Img src={cards.urlToImage} alt={cards.title} />
